@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-white section">
+    <section className="bg-surface-card section">
       <div className="container-custom">
         <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
 
@@ -27,7 +27,7 @@ const Hero = () => {
             className="space-y-6"
           >
             {/* Título Principal */}
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl text-brand-chocolate">
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl text-text-primary">
               O jeito mais fácil de fazer seu pedido na panificadora
             </h1>
 

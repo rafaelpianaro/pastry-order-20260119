@@ -30,7 +30,7 @@ const Benefits = () => {
   };
 
   return (
-    <section className="bg-white section">
+    <section className="bg-surface-card section">
       <div className="container-custom">
         {/* Título da Seção */}
         <motion.div
@@ -40,7 +40,7 @@ const Benefits = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-brand-chocolate">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-text-primary">
             Por que usar nosso assistente?
           </h2>
           <p className="mx-auto text-lg text-text-secondary">
@@ -75,7 +75,7 @@ const Benefits = () => {
                 </div>
 
                 {/* Título */}
-                <h3 className="mb-3 text-xl font-semibold md:text-2xl text-brand-chocolate">
+                <h3 className="mb-3 text-xl font-semibold md:text-2xl text-text-primary">
                   {beneficio.titulo}
                 </h3>
 

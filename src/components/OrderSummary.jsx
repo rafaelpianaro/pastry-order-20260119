@@ -85,7 +85,7 @@ const OrderSummary = ({ carrinho }) => {
   };
 
   return (
-    <section id="resumo-pedido" className="bg-white section">
+    <section id="resumo-pedido" className="bg-surface-card section">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,7 +96,7 @@ const OrderSummary = ({ carrinho }) => {
         >
           {/* Cabeçalho */}
           <div className="mb-8 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-brand-chocolate">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-text-primary">
               Seu Pedido
             </h2>
             <p className="text-lg text-text-secondary">
@@ -109,7 +109,7 @@ const OrderSummary = ({ carrinho }) => {
             {/* Lista de Produtos */}
             {produtosNoCarrinho.length > 0 ? (
               <div className="mb-8 space-y-5">
-                <div className="flex items-center gap-2 mb-6 text-lg font-semibold text-brand-chocolate">
+                <div className="flex items-center gap-2 mb-6 text-lg font-semibold text-text-primary">
                   <ShoppingCart className="w-5 h-5" aria-hidden="true" />
                   <span>Itens do pedido ({totalItens})</span>
                 </div>
@@ -120,7 +120,7 @@ const OrderSummary = ({ carrinho }) => {
                     className="flex items-start justify-between gap-4 p-5 rounded-lg bg-surface-muted md:items-center"
                   >
                     <div className="flex-1 min-w-0 space-y-1">
-                      <h4 className="text-base font-semibold leading-relaxed text-brand-cocoa md:text-lg">
+                      <h4 className="text-base font-semibold leading-relaxed text-text-primary md:text-lg">
                         {produto.nome}
                       </h4>
                       <p className="text-sm text-text-muted md:text-base">
@@ -137,7 +137,7 @@ const OrderSummary = ({ carrinho }) => {
 
                 {/* Total */}
                 <div className="pt-6 mt-6 border-t-2 border-surface-border">
-                  <div className="flex items-center justify-between text-xl font-bold text-brand-chocolate md:text-2xl">
+                  <div className="flex items-center justify-between text-xl font-bold text-text-primary md:text-2xl">
                     <span>Total:</span>
                     <span className="text-2xl text-accent-oven md:text-3xl">
                       R$ {totalValor.toFixed(2).replace('.', ',')}
@@ -174,7 +174,7 @@ const OrderSummary = ({ carrinho }) => {
                 <div className="space-y-3">
                   <label
                     htmlFor="nome-cliente"
-                    className="flex items-center gap-2 text-lg font-medium text-brand-chocolate md:text-xl"
+                    className="flex items-center gap-2 text-lg font-medium text-text-primary md:text-xl"
                   >
                     <User className="w-5 h-5" aria-hidden="true" />
                     Seu nome:
@@ -241,7 +241,7 @@ const OrderSummary = ({ carrinho }) => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="p-6 mt-8 border bg-support-sky/20 rounded-xl border-support-sky/30"
           >
-            <h3 className="flex items-center gap-2 mb-3 font-semibold text-brand-chocolate">
+            <h3 className="flex items-center gap-2 mb-3 font-semibold text-text-primary">
               <span className="text-xl" role="img" aria-label="relógio">🕐</span>
               Horários de Atendimento
             </h3>

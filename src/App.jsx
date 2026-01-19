@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
+import ThemeToggle from './components/ThemeToggle';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
 import Suggestions from './components/Suggestions';
@@ -22,33 +24,38 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Header fixo opcional (pode ser adicionado depois) */}
-      
-      {/* Section 1: Hero */}
-      <Hero />
+    <ThemeProvider>
+      <div className="min-h-screen">
+        {/* Header fixo opcional (pode ser adicionado depois) */}
+        
+        {/* Section 1: Hero */}
+        <Hero />
 
-      {/* Section 2: Benefits (Por que usar) */}
-      <Benefits />
+        {/* Section 2: Benefits (Por que usar) */}
+        <Benefits />
 
-      {/* Section 3: Suggestions (Sugestões interativas) */}
-      <Suggestions />
+        {/* Section 3: Suggestions (Sugestões interativas) */}
+        <Suggestions />
 
-      {/* Section 4: Products (Catálogo) */}
-      <Products onCartUpdate={handleCartUpdate} />
+        {/* Section 4: Products (Catálogo) */}
+        <Products onCartUpdate={handleCartUpdate} />
 
-      {/* Section 5: Trust & Quality */}
-      <TrustQuality />
+        {/* Section 5: Trust & Quality */}
+        <TrustQuality />
 
-      {/* Section 6: Order Summary (Resumo e Finalização) */}
-      <OrderSummary carrinho={carrinho} />
+        {/* Section 6: Order Summary (Resumo e Finalização) */}
+        <OrderSummary carrinho={carrinho} />
 
-      {/* Section 7: Call to Action */}
-      <CallToAction />
+        {/* Section 7: Call to Action */}
+        <CallToAction />
 
-      {/* Section 8: Footer */}
-      <Footer />
-    </div>
+        {/* Section 8: Footer */}
+        <Footer />
+
+        {/* Theme Toggle Button */}
+        <ThemeToggle />
+      </div>
+    </ThemeProvider>
   );
 }
 

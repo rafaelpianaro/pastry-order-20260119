@@ -90,7 +90,7 @@ export default function OrderForm({ cart, setCart }) {
   }
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-surface-card">
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -107,22 +107,22 @@ export default function OrderForm({ cart, setCart }) {
       />
       <div className="container px-4 mx-auto">
         <div className="max-w-2xl mx-auto">
-          <h2 className="mb-8 text-3xl text-center md:text-4xl text-warm-900">
+          <h2 className="mb-8 text-3xl text-center md:text-4xl text-text-primary">
             Resumo do Pedido
           </h2>
 
           {/* Cart Items */}
-          <div className="p-6 mb-6 rounded-lg bg-warm-50">
+          <div className="p-6 mb-6 rounded-lg bg-surface-muted">
             {cart.map(item => (
-              <div key={item.id} className="flex items-center justify-between py-4 border-b border-warm-200 last:border-0">
+              <div key={item.id} className="flex items-center justify-between py-4 border-b border-surface-border last:border-0">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-warm-900">{item.name}</h3>
-                  <p className="text-sm text-warm-600">
+                  <h3 className="font-semibold text-text-primary">{item.name}</h3>
+                  <p className="text-sm text-text-secondary">
                     {item.quantity}x R$ {item.price.toFixed(2)}
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="font-bold text-warm-900">
+                  <span className="font-bold text-text-primary">
                     R$ {(item.price * item.quantity).toFixed(2)}
                   </span>
                   <button
@@ -136,8 +136,8 @@ export default function OrderForm({ cart, setCart }) {
               </div>
             ))}
 
-            <div className="pt-4 mt-6 border-t-2 border-warm-300">
-              <div className="flex items-center justify-between text-xl font-bold text-warm-900">
+            <div className="pt-4 mt-6 border-t-2 border-surface-border">
+              <div className="flex items-center justify-between text-xl font-bold text-text-primary">
                 <span>Total:</span>
                 <span>R$ {total.toFixed(2)}</span>
               </div>
@@ -146,7 +146,7 @@ export default function OrderForm({ cart, setCart }) {
 
           {/* Customer Name */}
           <div className="mb-6">
-            <label htmlFor="name" className="block mb-2 font-semibold text-warm-900">
+            <label htmlFor="name" className="block mb-2 font-semibold text-text-primary">
               Seu nome:
             </label>
             <input
@@ -155,10 +155,10 @@ export default function OrderForm({ cart, setCart }) {
               value={customerName}
               onChange={(e) => setCustomerName(e.target.value)}
               placeholder="Digite seu nome completo"
-              className="w-full px-4 py-3 border-2 rounded-lg border-warm-200 focus:outline-none focus:border-warm-600 text-warm-900"
+              className="w-full px-4 py-3 border-2 rounded-lg border-surface-border focus:outline-none focus:border-accent-oven text-text-primary bg-surface-card"
               required
             />
-            <p className="mt-2 text-sm text-warm-600">
+            <p className="mt-2 text-sm text-text-secondary">
               Seu pedido será enviado direto para nossa equipe no WhatsApp.
             </p>
           </div>

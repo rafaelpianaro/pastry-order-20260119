@@ -60,7 +60,7 @@ const Products = ({ onCartUpdate }) => {
           transition={{ duration: 0.5 }}
           className="mb-8 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-brand-chocolate">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-text-primary">
             Nossos Produtos Fresquinhos
           </h2>
           <p className="mx-auto text-lg text-text-secondary">
@@ -75,7 +75,7 @@ const Products = ({ onCartUpdate }) => {
             className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
               categoriaAtiva === 'Todos'
                 ? 'bg-accent-butter text-brand-chocolate shadow-md'
-                : 'bg-white text-text-secondary border border-surface-border hover:border-accent-oven'
+                : 'bg-surface-card text-text-secondary border border-surface-border hover:border-accent-oven'
             }`}
           >
             Todos
@@ -87,7 +87,7 @@ const Products = ({ onCartUpdate }) => {
               className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
                 categoriaAtiva === categoria
                   ? 'bg-accent-butter text-brand-chocolate shadow-md'
-                  : 'bg-white text-text-secondary border border-surface-border hover:border-accent-oven'
+                  : 'bg-surface-card text-text-secondary border border-surface-border hover:border-accent-oven'
               }`}
             >
               {categoria}
@@ -139,7 +139,7 @@ const Products = ({ onCartUpdate }) => {
                   </div>
 
                   {/* Nome do Produto */}
-                  <h3 className="mb-2 text-xl font-bold text-brand-chocolate">
+                  <h3 className="mb-2 text-xl font-bold text-text-primary">
                     {produto.nome}
                   </h3>
 
@@ -159,7 +159,7 @@ const Products = ({ onCartUpdate }) => {
                     <button
                       onClick={() => atualizarQuantidade(produto.id, -1)}
                       disabled={quantidade === 0}
-                      className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-xl bg-surface-muted text-brand-chocolate hover:bg-accent-butter disabled:opacity-30 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center w-12 h-12 transition-all duration-200 rounded-xl bg-surface-muted text-text-primary hover:bg-accent-butter disabled:opacity-30 disabled:cursor-not-allowed"
                       aria-label={`Diminuir quantidade de ${produto.nome}`}
                     >
                       <Minus className="w-5 h-5" aria-hidden="true" />
@@ -167,7 +167,7 @@ const Products = ({ onCartUpdate }) => {
 
                     {/* Quantidade Atual */}
                     <div className="flex-1 text-center">
-                      <span className="text-2xl font-bold text-brand-chocolate">
+                      <span className="text-2xl font-bold text-text-primary">
                         {quantidade}
                       </span>
                     </div>

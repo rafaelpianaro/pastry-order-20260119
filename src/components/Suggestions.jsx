@@ -22,7 +22,7 @@ const Suggestions = () => {
   };
 
   return (
-    <section className="bg-brand-caramel section">
+    <section className="bg-surface-muted section">
       <div className="container-custom">
         {/* Título da Seção */}
         <motion.div
@@ -32,7 +32,7 @@ const Suggestions = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-brand-chocolate">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl text-text-primary">
             O que você gostaria de saber?
           </h2>
           <p className="mx-auto text-lg text-text-secondary">
@@ -53,7 +53,7 @@ const Suggestions = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.4 }}
                 whileHover={cardHover}
-                className="p-6 transition-colors duration-300 bg-white border-2 border-transparent shadow-md cursor-pointer rounded-xl group hover:border-accent-oven"
+                className="p-6 transition-colors duration-300 bg-surface-card border-2 border-transparent shadow-md cursor-pointer rounded-xl group hover:border-accent-oven"
               >
                 <div className="flex items-start gap-4">
                   {/* Ícone */}
@@ -69,7 +69,7 @@ const Suggestions = () => {
 
                   {/* Texto */}
                   <div className="flex-1">
-                    <p className="text-base font-medium leading-snug transition-colors duration-300 md:text-lg text-brand-chocolate group-hover:text-accent-oven">
+                    <p className="text-base font-medium leading-snug transition-colors duration-300 md:text-lg text-text-primary group-hover:text-accent-oven">
                       {sugestao.texto}
                     </p>
                   </div>

@@ -21,13 +21,13 @@
   --color-support-mint: #9ED6C3;
   --color-support-sky: #A8DADC;
 
-  /* Text Colors - Hierarquia de Leitura */
+  /* Text Colors - Hierarquia de Leitura (Light Mode) */
   --color-text-primary: #3B1F1A;
   --color-text-secondary: #6B4A3A;
   --color-text-muted: #8B7A6A;
   --color-text-inverse: #F6EFE8;
 
-  /* Surface Colors - Superfícies & Containers */
+  /* Surface Colors - Superfícies & Containers (Light Mode) */
   --color-surface-background: #F6EFE8;
   --color-surface-card: #FFFFFF;
   --color-surface-muted: #EFE4D8;
@@ -58,6 +58,27 @@
   --shadow-md: 0 4px 6px -1px rgb(59 31 26 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(59 31 26 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(59 31 26 / 0.1);
+}
+
+/* Dark Mode Variables */
+.dark {
+  /* Text Colors - Dark Mode */
+  --color-text-primary: #F6EFE8;
+  --color-text-secondary: #E5D8CC;
+  --color-text-muted: #C4B5A6;
+  --color-text-inverse: #3B1F1A;
+
+  /* Surface Colors - Dark Mode */
+  --color-surface-background: #1A1412;
+  --color-surface-card: #2A1F1A;
+  --color-surface-muted: #3B2820;
+  --color-surface-border: #4A332A;
+
+  /* Shadows - Dark Mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5);
 }
 
 /* Reset e Base Styles */

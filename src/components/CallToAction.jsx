@@ -46,21 +46,21 @@ const CallToAction = () => {
           </motion.div>
 
           {/* Título */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-chocolate mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6 leading-tight">
             Seu pedido pronto, do jeito que você gosta
           </h2>
 
           {/* Descrição */}
           <div className="space-y-4 mb-8">
-            <div className="flex items-center justify-center gap-3 text-lg text-brand-chocolate">
+            <div className="flex items-center justify-center gap-3 text-lg text-text-primary">
               <CheckCircle className="w-6 h-6 text-accent-oven flex-shrink-0" aria-hidden="true" />
               <span>Escolha seus produtos favoritos</span>
             </div>
-            <div className="flex items-center justify-center gap-3 text-lg text-brand-chocolate">
+            <div className="flex items-center justify-center gap-3 text-lg text-text-primary">
               <CheckCircle className="w-6 h-6 text-accent-oven flex-shrink-0" aria-hidden="true" />
               <span>Faça encomendas para festas e datas especiais</span>
             </div>
-            <div className="flex items-center justify-center gap-3 text-lg text-brand-chocolate">
+            <div className="flex items-center justify-center gap-3 text-lg text-text-primary">
               <CheckCircle className="w-6 h-6 text-accent-oven flex-shrink-0" aria-hidden="true" />
               <span>Retire no supermercado com comodidade</span>
             </div>

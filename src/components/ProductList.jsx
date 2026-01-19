@@ -97,9 +97,9 @@ export default function ProductList({ cart, setCart }) {
   };
 
   return (
-    <section id="products" className="py-16 bg-warm-50">
+    <section id="products" className="py-16 bg-surface-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl text-center text-warm-900 mb-8">
+        <h2 className="text-3xl md:text-4xl text-center text-text-primary mb-8">
           Nossos Produtos
         </h2>
 
@@ -111,8 +111,8 @@ export default function ProductList({ cart, setCart }) {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-full font-medium transition-colors ${
                 selectedCategory === category
-                  ? 'bg-warm-600 text-white'
-                  : 'bg-white text-warm-700 hover:bg-warm-100'
+                  ? 'bg-accent-butter text-brand-chocolate'
+                  : 'bg-surface-card text-text-secondary hover:bg-surface-muted border border-surface-border'
               }`}
             >
               {category}
@@ -135,14 +135,14 @@ export default function ProductList({ cart, setCart }) {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                  className="bg-surface-card rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
                 >
                   <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-warm-900 mb-2">
+                    <h3 className="text-xl font-semibold text-text-primary mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-warm-600 mb-2">{product.category}</p>
-                    <p className="text-2xl font-bold text-warm-700">
+                    <p className="text-sm text-text-secondary mb-2">{product.category}</p>
+                    <p className="text-2xl font-bold text-accent-oven">
                       R$ {product.price.toFixed(2)}
                     </p>
                   </div>
@@ -151,27 +151,27 @@ export default function ProductList({ cart, setCart }) {
                     {quantity === 0 ? (
                       <button
                         onClick={() => addToCart(product)}
-                        className="flex-1 bg-warm-600 hover:bg-warm-700 text-white px-4 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+                        className="flex-1 bg-accent-butter hover:bg-accent-butterStrong text-brand-chocolate px-4 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
                       >
                         <Plus className="w-5 h-5" />
                         Adicionar
                       </button>
                     ) : (
-                      <div className="flex-1 flex items-center justify-between bg-warm-100 rounded-lg p-2">
+                      <div className="flex-1 flex items-center justify-between bg-surface-muted rounded-lg p-2">
                         <button
                           onClick={() => removeFromCart(product.id)}
-                          className="bg-white hover:bg-warm-200 p-2 rounded-lg transition-colors"
+                          className="bg-surface-card hover:bg-surface-background p-2 rounded-lg transition-colors"
                         >
-                          <Minus className="w-5 h-5 text-warm-700" />
+                          <Minus className="w-5 h-5 text-text-primary" />
                         </button>
-                        <span className="text-xl font-bold text-warm-900 px-4">
+                        <span className="text-xl font-bold text-text-primary px-4">
                           {quantity}
                         </span>
                         <button
                           onClick={() => addToCart(product)}
-                          className="bg-white hover:bg-warm-200 p-2 rounded-lg transition-colors"
+                          className="bg-surface-card hover:bg-surface-background p-2 rounded-lg transition-colors"
                         >
-                          <Plus className="w-5 h-5 text-warm-700" />
+                          <Plus className="w-5 h-5 text-text-primary" />
                         </button>
                       </div>
                     )}
@@ -187,7 +187,7 @@ export default function ProductList({ cart, setCart }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="fixed bottom-6 right-6 bg-warm-600 text-white rounded-full p-4 shadow-lg"
+            className="fixed bottom-6 right-6 bg-accent-oven text-white rounded-full p-4 shadow-lg"
           >
             <div className="flex items-center gap-2">
               <ShoppingCart className="w-6 h-6" />
