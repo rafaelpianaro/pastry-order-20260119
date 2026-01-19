@@ -1,0 +1,156 @@
+{
+  "whatsapp": "5548999999999",
+  "nomePanificadora": "Panificadora do Supermercado",
+  "horarios": {
+    "segunda_sexta": "07:00 - 19:00",
+    "sabado": "07:00 - 18:00",
+    "domingo": "08:00 - 13:00"
+  },
+  "categorias": ["Bolos", "Assados", "Doces", "Outros"],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Bolo de Chocolate",
+      "categoria": "Bolos",
+      "preco": 35,
+      "descricao": "Bolo tradicional de chocolate com cobertura cremosa"
+    },
+    {
+      "id": 2,
+      "nome": "Bolo de Cenoura",
+      "categoria": "Bolos",
+      "preco": 32,
+      "descricao": "Bolo caseiro de cenoura com cobertura de chocolate"
+    },
+    {
+      "id": 3,
+      "nome": "Bolo de Fubá",
+      "categoria": "Bolos",
+      "preco": 28,
+      "descricao": "Bolo de fubá cremoso, receita da vovó"
+    },
+    {
+      "id": 4,
+      "nome": "Cuca",
+      "categoria": "Assados",
+      "preco": 25,
+      "descricao": "Cuca tradicional com farofa crocante"
+    },
+    {
+      "id": 5,
+      "nome": "Pão Caseiro",
+      "categoria": "Assados",
+      "preco": 8,
+      "descricao": "Pão caseiro fresquinho, feito diariamente"
+    },
+    {
+      "id": 6,
+      "nome": "Pastel Assado",
+      "categoria": "Assados",
+      "preco": 6,
+      "descricao": "Pastel assado recheado, diversos sabores"
+    },
+    {
+      "id": 7,
+      "nome": "Pão de Queijo",
+      "categoria": "Assados",
+      "preco": 12,
+      "descricao": "Pão de queijo mineiro, quentinho"
+    },
+    {
+      "id": 8,
+      "nome": "Enroladinho",
+      "categoria": "Doces",
+      "preco": 4,
+      "descricao": "Enroladinho de salsicha, perfeito para o lanche"
+    },
+    {
+      "id": 9,
+      "nome": "Sonho",
+      "categoria": "Doces",
+      "preco": 5,
+      "descricao": "Sonho recheado com creme, doce de leite ou chocolate"
+    },
+    {
+      "id": 10,
+      "nome": "Brigadeiro",
+      "categoria": "Doces",
+      "preco": 2.5,
+      "descricao": "Brigadeiro gourmet, feito artesanalmente"
+    },
+    {
+      "id": 11,
+      "nome": "Carolinas",
+      "categoria": "Doces",
+      "preco": 4.5,
+      "descricao": "Carolinas recheadas com creme"
+    },
+    {
+      "id": 12,
+      "nome": "Biscoitos Caseiros",
+      "categoria": "Outros",
+      "preco": 15,
+      "descricao": "Pacote de biscoitos caseiros variados (500g)"
+    }
+  ],
+  "sugestoes": [
+    {
+      "id": 1,
+      "texto": "Quais bolos estão disponíveis hoje?",
+      "icone": "cake"
+    },
+    {
+      "id": 2,
+      "texto": "Tem assados prontos para o almoço?",
+      "icone": "clock"
+    },
+    {
+      "id": 3,
+      "texto": "Quais doces são mais vendidos?",
+      "icone": "star"
+    },
+    {
+      "id": 4,
+      "texto": "Posso encomendar um bolo para o fim de semana?",
+      "icone": "calendar"
+    }
+  ],
+  "beneficios": [
+    {
+      "id": 1,
+      "icone": "Store",
+      "titulo": "Tudo da nossa panificadora",
+      "descricao": "Veja bolos, pães, assados e doces feitos diariamente, direto da panificadora do supermercado."
+    },
+    {
+      "id": 2,
+      "icone": "Clock",
+      "titulo": "Rápido e prático",
+      "descricao": "Faça seu pedido em poucos minutos, sem filas e sem precisar ligar."
+    },
+    {
+      "id": 3,
+      "icone": "MessageCircle",
+      "titulo": "Atendimento simples",
+      "descricao": "Converse como se estivesse falando com um atendente da padaria — fácil de entender e usar."
+    }
+  ],
+  "confianca": [
+    {
+      "id": 1,
+      "texto": "Produtos feitos diariamente na nossa panificadora"
+    },
+    {
+      "id": 2,
+      "texto": "Ingredientes selecionados e receitas tradicionais"
+    },
+    {
+      "id": 3,
+      "texto": "Retirada direto no supermercado, com praticidade"
+    },
+    {
+      "id": 4,
+      "texto": "Atendimento local, feito por quem conhece você"
+    }
+  ]
+}
