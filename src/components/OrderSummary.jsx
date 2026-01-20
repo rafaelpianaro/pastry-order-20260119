@@ -60,20 +60,24 @@ const OrderSummary = ({ carrinho }) => {
 
   // Gerar mensagem formatada para WhatsApp
   const gerarMensagemWhatsApp = () => {
-    let mensagem = `Olá! 👋\n\n`;
-    mensagem += `Meu nome é *${nomeCliente}*.\n\n`;
+    let mensagem = `Ola!\n\n`;
+    mensagem += `Meu nome e *${nomeCliente}*.\n\n`;
     mensagem += `Gostaria de fazer o seguinte pedido:\n\n`;
-    mensagem += `━━━━━━━━━━━━━━━━\n`;
+    mensagem += `================\n`;
+    mensagem += `ITENS DO PEDIDO\n`;
+    mensagem += `================\n\n`;
 
     produtosNoCarrinho.forEach((produto) => {
-      mensagem += `🍞 *${produto.nome}*\n`;
-      mensagem += `   ${produto.quantidade}x R$ ${produto.preco.toFixed(2).replace('.', ',')} = R$ ${produto.subtotal.toFixed(2).replace('.', ',')}\n\n`;
+      mensagem += `* *${produto.nome}*\n`;
+      mensagem += `  ${produto.quantidade}x R$ ${produto.preco.toFixed(2).replace('.', ',')} = R$ ${produto.subtotal.toFixed(2).replace('.', ',')}\n\n`;
     });
 
-    mensagem += `━━━━━━━━━━━━━━━━\n`;
-    mensagem += `📦 Total de itens: *${totalItens}*\n`;
-    mensagem += `💰 Valor total: *R$ ${totalValor.toFixed(2).replace('.', ',')}*\n\n`;
-    mensagem += `Obrigado! 😊`;
+    mensagem += `================\n`;
+    mensagem += `RESUMO\n`;
+    mensagem += `================\n`;
+    mensagem += `Total de itens: *${totalItens}*\n`;
+    mensagem += `Valor total: *R$ ${totalValor.toFixed(2).replace('.', ',')}*\n\n`;
+    mensagem += `Obrigado!`;
 
     return mensagem;
   };
