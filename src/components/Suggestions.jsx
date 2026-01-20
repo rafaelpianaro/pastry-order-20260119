@@ -6,7 +6,7 @@ import data from '../data/data.json';
  * Componente Suggestions - Sugestões de perguntas interativas
  * Cards com animações de hover
  */
-const Suggestions = () => {
+const Suggestions = ({ onSugestaoClick }) => {
   // Mapear ícones dinamicamente
   const iconMap = {
     cake: Cake,
@@ -19,6 +19,13 @@ const Suggestions = () => {
   const cardHover = {
     scale: 1.05,
     transition: { duration: 0.3, ease: 'easeOut' },
+  };
+
+  // Handler para clique em sugestão
+  const handleClick = (sugestao) => {
+    if (onSugestaoClick && sugestao.acao) {
+      onSugestaoClick(sugestao.acao);
+    }
   };
 
   return (
@@ -44,6 +51,12 @@ const Suggestions = () => {
         <div className="grid max-w-4xl grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:gap-6">
           {data.sugestoes.map((sugestao, index) => {
             const IconComponent = iconMap[sugestao.icone];
+            console.table({
+              'Sugestão ID': sugestao.id,
+              'Texto': sugestao.texto,
+              'Ícone': sugestao.icone,
+              'IconComponent': IconComponent ? 'Encontrado' : 'Não encontrado'
+            });
 
             return (
               <motion.div
@@ -53,7 +66,8 @@ const Suggestions = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.4 }}
                 whileHover={cardHover}
-                className="p-6 transition-colors duration-300 bg-surface-card border-2 border-transparent shadow-md cursor-pointer rounded-xl group hover:border-accent-oven"
+                onClick={() => handleClick(sugestao)}
+                className="p-6 transition-colors duration-300 border-2 border-transparent shadow-md cursor-pointer bg-surface-card rounded-xl group hover:border-accent-oven"
               >
                 <div className="flex items-start gap-4">
                   {/* Ícone */}

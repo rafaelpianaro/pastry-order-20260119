@@ -23,8 +23,8 @@ const categories = ['Todos', 'Bolos', 'Assados', 'Doces'];
 export default function ProductList({ cart, setCart }) {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
-  const filteredProducts = selectedCategory === 'Todos' 
-    ? products 
+  const filteredProducts = selectedCategory === 'Todos'
+    ? products
     : products.filter(p => p.category === selectedCategory);
 
   const addToCart = (product) => {
@@ -40,8 +40,8 @@ export default function ProductList({ cart, setCart }) {
           },
           duration: 2000,
         });
-        return prev.map(item => 
-          item.id === product.id 
+        return prev.map(item =>
+          item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -72,8 +72,8 @@ export default function ProductList({ cart, setCart }) {
           },
           duration: 1500,
         });
-        return prev.map(item => 
-          item.id === productId 
+        return prev.map(item =>
+          item.id === productId
             ? { ...item, quantity: item.quantity - 1 }
             : item
         );
@@ -98,8 +98,8 @@ export default function ProductList({ cart, setCart }) {
 
   return (
     <section id="products" className="py-16 bg-surface-background">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl text-center text-text-primary mb-8">
+      <div className="container px-4 mx-auto">
+        <h2 className="mb-8 text-3xl text-center md:text-4xl text-text-primary">
           Nossos Produtos
         </h2>
 
@@ -121,9 +121,9 @@ export default function ProductList({ cart, setCart }) {
         </div>
 
         {/* Products Grid */}
-        <motion.div 
+        <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence>
             {filteredProducts.map(product => {
@@ -135,13 +135,13 @@ export default function ProductList({ cart, setCart }) {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-surface-card rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                  className="p-6 transition-shadow rounded-lg shadow-md bg-surface-card hover:shadow-lg"
                 >
                   <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-text-primary mb-2">
+                    <h3 className="mb-2 text-xl font-semibold text-text-primary">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-text-secondary mb-2">{product.category}</p>
+                    <p className="mb-2 text-sm text-text-secondary">{product.category}</p>
                     <p className="text-2xl font-bold text-accent-oven">
                       R$ {product.price.toFixed(2)}
                     </p>
@@ -151,25 +151,25 @@ export default function ProductList({ cart, setCart }) {
                     {quantity === 0 ? (
                       <button
                         onClick={() => addToCart(product)}
-                        className="flex-1 bg-accent-butter hover:bg-accent-butterStrong text-brand-chocolate px-4 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+                        className="flex items-center justify-center flex-1 gap-2 px-4 py-3 font-semibold transition-colors rounded-lg bg-accent-butter hover:bg-accent-butterStrong text-brand-chocolate"
                       >
                         <Plus className="w-5 h-5" />
-                        Adicionar
+                        Adicionar rafael
                       </button>
                     ) : (
-                      <div className="flex-1 flex items-center justify-between bg-surface-muted rounded-lg p-2">
+                      <div className="flex items-center justify-between flex-1 p-2 rounded-lg bg-surface-muted">
                         <button
                           onClick={() => removeFromCart(product.id)}
-                          className="bg-surface-card hover:bg-surface-background p-2 rounded-lg transition-colors"
+                          className="p-2 transition-colors rounded-lg bg-surface-card hover:bg-surface-background"
                         >
                           <Minus className="w-5 h-5 text-text-primary" />
                         </button>
-                        <span className="text-xl font-bold text-text-primary px-4">
-                          {quantity}
+                        <span className="px-4 text-xl font-bold text-text-primary">
+                          {quantity} rafael
                         </span>
                         <button
                           onClick={() => addToCart(product)}
-                          className="bg-surface-card hover:bg-surface-background p-2 rounded-lg transition-colors"
+                          className="p-2 transition-colors rounded-lg bg-surface-card hover:bg-surface-background"
                         >
                           <Plus className="w-5 h-5 text-text-primary" />
                         </button>
@@ -187,12 +187,12 @@ export default function ProductList({ cart, setCart }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="fixed bottom-6 right-6 bg-accent-oven text-white rounded-full p-4 shadow-lg"
+            className="fixed p-4 text-white rounded-full shadow-lg bottom-6 right-6 bg-accent-oven"
           >
             <div className="flex items-center gap-2">
               <ShoppingCart className="w-6 h-6" />
-              <span className="font-bold text-lg">
-                {cart.reduce((sum, item) => sum + item.quantity, 0)}
+              <span className="text-lg font-bold">
+                {cart.reduce((sum, item) => sum + item.quantity, 0)} rafael
               </span>
             </div>
           </motion.div>

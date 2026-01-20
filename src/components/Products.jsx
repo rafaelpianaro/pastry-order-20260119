@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ShoppingCart } from 'lucide-react';
 import data from '../data/data.json';
@@ -7,9 +7,32 @@ import data from '../data/data.json';
  * Componente Products - Catálogo de produtos com filtros e carrinho
  * Gerencia estado do carrinho e quantidades
  */
-const Products = ({ onCartUpdate }) => {
+const Products = ({ onCartUpdate, filtroExterno, destacarProdutos }) => {
   const [categoriaAtiva, setCategoriaAtiva] = useState('Todos');
   const [carrinho, setCarrinho] = useState({});
+  const [produtosDestacados, setProdutosDestacados] = useState([]);
+  const produtosRef = useRef({});
+
+  // Aplicar filtro externo (vindo de Suggestions)
+  useEffect(() => {
+    if (filtroExterno) {
+      setCategoriaAtiva(filtroExterno);
+    }
+  }, [filtroExterno]);
+
+  // Aplicar destaque em produtos específicos
+  useEffect(() => {
+    if (destacarProdutos && destacarProdutos.length > 0) {
+      setProdutosDestacados(destacarProdutos);
+
+      // Remover destaque após 2 segundos
+      const timer = setTimeout(() => {
+        setProdutosDestacados([]);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [destacarProdutos]);
 
   // Filtrar produtos por categoria
   const produtosFiltrados = useMemo(() => {
@@ -124,18 +147,32 @@ const Products = ({ onCartUpdate }) => {
             {produtosFiltrados.map((produto) => {
               const quantidade = carrinho[produto.id] || 0;
 
+              const isDestacado = produtosDestacados.includes(produto.id);
+
               return (
                 <motion.div
                   key={produto.id}
+                  ref={(el) => (produtosRef.current[produto.id] = el)}
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    boxShadow: isDestacado
+                      ? '0 0 0 3px rgba(243, 156, 74, 0.5)'
+                      : '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+                  }}
                   transition={{ duration: 0.3 }}
-                  className="card hover-lift"
+                  className={`card hover-lift ${isDestacado ? 'ring-4 ring-accent-oven ring-opacity-50' : ''}`}
                 >
-                  {/* Badge de Categoria */}
-                  <div className="mb-3">
+                  {/* Badge de Categoria e Mais Vendido */}
+                  <div className="flex gap-2 mb-3">
                     <span className="badge">{produto.categoria}</span>
+                    {produto.maisVendido && (
+                      <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-accent-oven/20 text-accent-oven">
+                        ⭐ Mais Vendido
+                      </span>
+                    )}
                   </div>
 
                   {/* Nome do Produto */}
@@ -145,7 +182,7 @@ const Products = ({ onCartUpdate }) => {
 
                   {/* Descrição */}
                   <p className="mb-4 text-sm text-text-secondary line-clamp-2">
-                    {produto.descricao}
+                    {produto.descricao} rafael
                   </p>
 
                   {/* Preço */}

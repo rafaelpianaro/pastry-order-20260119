@@ -9,6 +9,7 @@ import TrustQuality from './components/TrustQuality';
 import CallToAction from './components/CallToAction';
 import OrderSummary from './components/OrderSummary';
 import Footer from './components/Footer';
+import data from './data/data.json';
 
 /**
  * App Principal - Landing Page Panificadora
@@ -17,10 +18,44 @@ import Footer from './components/Footer';
 function App() {
   // Estado do carrinho: { produtoId: quantidade }
   const [carrinho, setCarrinho] = useState({});
+  
+  // Estado para filtro externo (vindo de Suggestions)
+  const [filtroExterno, setFiltroExterno] = useState(null);
+  
+  // Estado para produtos destacados
+  const [destacarProdutos, setDestacarProdutos] = useState([]);
 
   // Callback para atualizar carrinho do componente Products
   const handleCartUpdate = (novoCarrinho) => {
     setCarrinho(novoCarrinho);
+  };
+
+  // Callback para aplicar sugestão (filtro + destaque + scroll)
+  const handleSugestaoClick = (acao) => {
+    if (!acao) return;
+
+    // Aplicar filtro
+    if (acao.categoria) {
+      setFiltroExterno(acao.categoria);
+    }
+
+    // Destacar produtos específicos
+    if (acao.destacar === 'maisVendido') {
+      const produtosMaisVendidos = data.produtos
+        .filter((p) => p.maisVendido && p.categoria === acao.categoria)
+        .map((p) => p.id);
+      setDestacarProdutos(produtosMaisVendidos);
+    } else {
+      setDestacarProdutos([]);
+    }
+
+    // Scroll suave para produtos
+    setTimeout(() => {
+      const produtosSection = document.getElementById('produtos');
+      if (produtosSection) {
+        produtosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   return (
@@ -35,10 +70,14 @@ function App() {
         <Benefits />
 
         {/* Section 3: Suggestions (Sugestões interativas) */}
-        <Suggestions />
+        <Suggestions onSugestaoClick={handleSugestaoClick} />
 
         {/* Section 4: Products (Catálogo) */}
-        <Products onCartUpdate={handleCartUpdate} />
+        <Products 
+          onCartUpdate={handleCartUpdate} 
+          filtroExterno={filtroExterno}
+          destacarProdutos={destacarProdutos}
+        />
 
         {/* Section 5: Trust & Quality */}
         <TrustQuality />

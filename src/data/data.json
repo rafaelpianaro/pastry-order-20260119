@@ -13,106 +13,136 @@
       "nome": "Bolo de Chocolate",
       "categoria": "Bolos",
       "preco": 35,
-      "descricao": "Bolo tradicional de chocolate com cobertura cremosa"
+      "descricao": "Bolo tradicional de chocolate com cobertura cremosa",
+      "maisVendido": true
     },
     {
       "id": 2,
       "nome": "Bolo de Cenoura",
       "categoria": "Bolos",
       "preco": 32,
-      "descricao": "Bolo caseiro de cenoura com cobertura de chocolate"
+      "descricao": "Bolo caseiro de cenoura com cobertura de chocolate",
+      "maisVendido": true
     },
     {
       "id": 3,
       "nome": "Bolo de Fubá",
       "categoria": "Bolos",
       "preco": 28,
-      "descricao": "Bolo de fubá cremoso, receita da vovó"
+      "descricao": "Bolo de fubá cremoso, receita da vovó",
+      "maisVendido": false
     },
     {
       "id": 4,
       "nome": "Cuca",
       "categoria": "Assados",
       "preco": 25,
-      "descricao": "Cuca tradicional com farofa crocante"
+      "descricao": "Cuca tradicional com farofa crocante",
+      "maisVendido": true
     },
     {
       "id": 5,
       "nome": "Pão Caseiro",
       "categoria": "Assados",
       "preco": 8,
-      "descricao": "Pão caseiro fresquinho, feito diariamente"
+      "descricao": "Pão caseiro fresquinho, feito diariamente",
+      "maisVendido": true
     },
     {
       "id": 6,
       "nome": "Pastel Assado",
       "categoria": "Assados",
       "preco": 6,
-      "descricao": "Pastel assado recheado, diversos sabores"
+      "descricao": "Pastel assado recheado, diversos sabores",
+      "maisVendido": false
     },
     {
       "id": 7,
       "nome": "Pão de Queijo",
       "categoria": "Assados",
       "preco": 12,
-      "descricao": "Pão de queijo mineiro, quentinho"
+      "descricao": "Pão de queijo mineiro, quentinho",
+      "maisVendido": true
     },
     {
       "id": 8,
       "nome": "Enroladinho",
       "categoria": "Doces",
       "preco": 4,
-      "descricao": "Enroladinho de salsicha, perfeito para o lanche"
+      "descricao": "Enroladinho de salsicha, perfeito para o lanche",
+      "maisVendido": false
     },
     {
       "id": 9,
       "nome": "Sonho",
       "categoria": "Doces",
       "preco": 5,
-      "descricao": "Sonho recheado com creme, doce de leite ou chocolate"
+      "descricao": "Sonho recheado com creme, doce de leite ou chocolate",
+      "maisVendido": true
     },
     {
       "id": 10,
       "nome": "Brigadeiro",
       "categoria": "Doces",
       "preco": 2.5,
-      "descricao": "Brigadeiro gourmet, feito artesanalmente"
+      "descricao": "Brigadeiro gourmet, feito artesanalmente",
+      "maisVendido": true
     },
     {
       "id": 11,
       "nome": "Carolinas",
       "categoria": "Doces",
       "preco": 4.5,
-      "descricao": "Carolinas recheadas com creme"
+      "descricao": "Carolinas recheadas com creme",
+      "maisVendido": false
     },
     {
       "id": 12,
       "nome": "Biscoitos Caseiros",
       "categoria": "Outros",
       "preco": 15,
-      "descricao": "Pacote de biscoitos caseiros variados (500g)"
+      "descricao": "Pacote de biscoitos caseiros variados (500g)",
+      "maisVendido": false
     }
   ],
   "sugestoes": [
     {
       "id": 1,
       "texto": "Quais bolos estão disponíveis hoje?",
-      "icone": "cake"
+      "icone": "cake",
+      "acao": {
+        "tipo": "filtrar",
+        "categoria": "Bolos",
+        "destacar": "maisVendido"
+      }
     },
     {
       "id": 2,
       "texto": "Tem assados prontos para o almoço?",
-      "icone": "clock"
+      "icone": "clock",
+      "acao": {
+        "tipo": "filtrar",
+        "categoria": "Assados"
+      }
     },
     {
       "id": 3,
       "texto": "Quais doces são mais vendidos?",
-      "icone": "star"
+      "icone": "star",
+      "acao": {
+        "tipo": "filtrarDestaque",
+        "categoria": "Doces",
+        "destacar": "maisVendido"
+      }
     },
     {
       "id": 4,
       "texto": "Posso encomendar um bolo para o fim de semana?",
-      "icone": "calendar"
+      "icone": "calendar",
+      "acao": {
+        "tipo": "filtrar",
+        "categoria": "Bolos"
+      }
     }
   ],
   "beneficios": [
