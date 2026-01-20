@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
+import FloatingCart from './components/FloatingCart';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
 import Suggestions from './components/Suggestions';
@@ -90,6 +91,9 @@ function App() {
 
         {/* Section 8: Footer */}
         <Footer />
+
+        {/* Floating Cart (Fixed) */}
+        <FloatingCart carrinho={carrinho} />
 
         {/* Theme Toggle Button */}
         <ThemeToggle />
